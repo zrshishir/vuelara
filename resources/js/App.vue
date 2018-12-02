@@ -46,6 +46,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'App',
@@ -55,18 +56,18 @@ export default {
       clipped: false,
       sideNav: false,
       fixed: false,
-      menus: [
-            { icon: 'supervisor_account', title: 'View Meetups'},
-            { icon: 'room', title: 'Organize Meetups'},
-            { icon: 'person', title: 'Profile'},
-            { icon: 'face', title: 'Sign up'},
-            { icon: 'lock_open', title: 'Sign in'},
-      ]
+      // menus: [
+      //       { icon: 'supervisor_account', title: 'View Meetups'},
+      //       { icon: 'room', title: 'Organize Meetups'},
+      //       { icon: 'person', title: 'Profile'},
+      //       { icon: 'face', title: 'Sign up'},
+      //       { icon: 'lock_open', title: 'Sign in'},
+      // ]
     }
   }, 
 
   computed:{
-
+    ...mapGetters(['isLoggedIn', 'menus'])
   }, 
   methods: {
     logout(){
